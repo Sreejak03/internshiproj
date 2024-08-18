@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fce4ec;
+    color: #000000;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #ff4081; /* A vibrant color for hover/focus state */
+}
+
+/* Container for slides */
+.container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+/* Slide styles */
+.slide {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    background-color: #f8bbd0;
+    color: #000000;
+    border: 2px solid #d48c77;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Home slide styling */
+.home {
+    background: url('images/home-background.jpg') no-repeat center center;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #ffffff; /* Ensures text stands out against the background */
+}
+
+/* Apply red color to specific headings on the home page */
+.home .red-text {
+    color: #ff0000; /* Red color for headings on the home page */
+}
+
+/* Other page slide styling */
+.other-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    font-family: 'Daun Penh', serif;
+}
+
+/* Recipe content styling */
+.recipe-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Recipe text styling */
+.recipe-text {
+    flex: 1;
+    max-width: 55%;
+}
+
+/* Recipe image styling */
+.recipe-image {
+    flex: 1;
+    max-width: 40%;
+    padding-left: 20px;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Interesting Fact styling */
+.fact {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #d48c77;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fact h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.fact p {
+    font-family: 'Daun Penh', serif;
+    font-size: 1.3em; /* Slightly larger text for readability */
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* Thank you slide styling */
+.thank-you {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    background-color: #f8bbd0;
+}
+
+.thank-you h2 {
+    font-size: 2em;
+}
+
+.thank-you .content p {
+    font-size: 1.4em;
+    line-height: 1.4;
+}
+
+/* Content wrapper styling */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Content within each section */
+.content {
+    margin-top: 50px;
+}
+
+/* Headings */
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+/* Larger font size for paragraphs under titles (except first page) */
+.other-page p,
+.thank-you p {
+    font-size: 1.3em; /* Slightly larger text for readability */
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.other-page p::before {
+    content: '★';
+    color: #ff0000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.3em; /* Slightly larger star */
+    line-height: 1.4;
+}
+
+/* Remove bullet points from specified sections */
+.home p, .fact p {
+    font-size: 1.2em;
+    position: static;
+    padding-left: 0;
+}
+
+/* Styling for Interesting Fact section */
+.fact {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #d48c77;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fact h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.fact p {
+    font-family: 'Daun Penh', serif;
+    font-size: 1.3em; /* Slightly larger text for readability */
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .fact h3 {
+        font-size: 1.2em;
+    }
+
+    .fact p {
+        font-size: 1.1em;
+    }
+
+    .recipe-image {
+        max-width: 50%; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .fact h3 {
+        font-size: 1em;
+    }
+
+    .fact p {
+        font-size: 1em;
+    }
+
+    .recipe-image {
+        max-width: 100%; /* Full width for very small screens */
+        padding-left: 0;
+    }
+}
